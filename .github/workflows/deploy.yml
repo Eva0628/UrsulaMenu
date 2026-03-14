@@ -2,12 +2,13 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ main ] # 如果你的主分支名是 master，请改为 master
+    branches: [ main ]
 
 permissions:
   contents: read
   pages: write
   id-token: write
+
 
 jobs:
   build-and-deploy:
@@ -38,8 +39,4 @@ jobs:
 
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deployment-action@v2
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          environment-name: github-pages
-          preview-url: ${{ steps.deployment.outputs.page_url }}
+        uses: actions/deploy-pages@v4
