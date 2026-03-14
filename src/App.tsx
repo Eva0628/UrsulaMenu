@@ -19,7 +19,7 @@ import {
 } from './data';
 
 export default function App() {
-  const [currentDate, setCurrentDate] = useState(new Date('2026-02-16'));
+  const [currentDate, setCurrentDate] = useState(new Date());
   const [language, setLanguage] = useState<'EN' | 'ZH'>('ZH');
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
 
@@ -90,7 +90,7 @@ export default function App() {
           >
             <Globe size={16} className="text-emerald-600 group-hover:rotate-12 transition-transform" />
             <span className="text-xs font-bold text-gray-600">
-              {language === 'ZH' ? 'English' : '中文'}
+              {language === 'ZH' ? 'Switch toEnglish' : '切换到中文'}
             </span>
           </button>
         </div>
